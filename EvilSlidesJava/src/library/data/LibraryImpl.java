@@ -1,4 +1,4 @@
-package LibraryData.data;
+package library.data;
 
 import java.util.List;
 
