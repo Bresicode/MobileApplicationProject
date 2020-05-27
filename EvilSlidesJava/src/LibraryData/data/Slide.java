@@ -1,4 +1,4 @@
-package data;
+package LibraryData.data;
 
 public interface Slide {
     /**

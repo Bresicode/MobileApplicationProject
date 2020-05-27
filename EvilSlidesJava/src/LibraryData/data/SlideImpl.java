@@ -1,4 +1,4 @@
-package data;
+package LibraryData.data;
 
 public class SlideImpl implements Slide{
    private String slideText;
