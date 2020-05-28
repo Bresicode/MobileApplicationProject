@@ -4,12 +4,14 @@ import library.data.Slide;
 
 import java.util.List;
 
+
 public class PlayerImpl implements Player{
-    int playerId;
-    String playerName;
-    List<Slide> playerHand;
-    Slide playerAnswer;
-    int playerScore;
+
+    private int playerId;
+    private String playerName;
+    private List<Slide> playerHand;
+    private Slide playerAnswer;
+    private int playerScore;
 
     @Override
     public int getPlayerId() {
