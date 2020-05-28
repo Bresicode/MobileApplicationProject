@@ -5,37 +5,53 @@ import library.data.Slide;
 import java.util.List;
 
 /**
- * Interface providing methods to get player data
+ * Interface providing methods to get and set player data
  */
 public interface Player {
     /**
-     * Get the player's Id
+     * Gets the player's Id
      * @return int playerId
      */
     int getPlayerId();
-
     /**
-     * Get the player name
+     * Gets the player name
      * @return String playerName
      */
     String getPlayerName();
-
     /**
-     * Get a list of the slides currently in the player's hand
+     * Gets a list of the slides currently in the player's hand
      * @return List<Slide> playerHand
      */
     List<Slide> getPlayerHand();
 
     /**
-     * Get the player's selected card
+     * Sets the player's hand
+     * @param playerHand List<Slide> playerHand
+     */
+    void setPlayerHand(List<Slide> playerHand);
+
+    /**
+     * Gets the player's selected card
      * @return Slide selection
      */
     Slide getPlayerAnswer();
 
     /**
-     * Get the player's current score
+     * Sets the players answer slide
+     * @param playerAnswer Slide playerName
+     */
+    void setPlayerAnswer(Slide playerAnswer);
+
+    /**
+     * Gets the player's current score
      * @return int playerScore
      */
     int getPlayerScore();
+
+    /**
+     * Sets the player's score
+     * @param playerScore int playerScore
+     */
+    void setPlayerScore(int playerScore);
 
 }

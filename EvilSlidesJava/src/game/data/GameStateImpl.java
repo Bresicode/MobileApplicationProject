@@ -12,6 +12,14 @@ public class GameStateImpl implements GameState{
     private boolean judgePhase;
     private Slide question;
 
+    public GameStateImpl(int scoreToWin, List<Player> players, List<Slide> playedCards, boolean judgePhase, Slide question) {
+        this.scoreToWin = scoreToWin;
+        this.players = players;
+        this.playedCards = playedCards;
+        this.judgePhase = judgePhase;
+        this.question = question;
+    }
+
     @Override
     public int getScoreToWin() {
         return this.scoreToWin;
@@ -23,8 +31,18 @@ public class GameStateImpl implements GameState{
     }
 
     @Override
+    public void setPlayers(List<Player> players) {
+        this.players = players;
+    }
+
+    @Override
     public List<Slide> getPlayedCards() {
         return this.playedCards;
+    }
+
+    @Override
+    public void setPlayerCards(List<Slide> playedCards) {
+        this.playedCards = playedCards;
     }
 
     @Override
@@ -33,7 +51,17 @@ public class GameStateImpl implements GameState{
     }
 
     @Override
+    public void setJudgePhase(boolean judgePhase) {
+        this.judgePhase = judgePhase;
+    }
+
+    @Override
     public Slide getQuestion() {
         return this.question;
+    }
+
+    @Override
+    public void setQuestion(Slide question) {
+        this.question = question;
     }
 }

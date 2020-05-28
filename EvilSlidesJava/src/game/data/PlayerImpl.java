@@ -13,6 +13,14 @@ public class PlayerImpl implements Player{
     private Slide playerAnswer;
     private int playerScore;
 
+    public PlayerImpl(int playerId, String playerName, List<Slide> playerHand, Slide playerAnswer, int playerScore) {
+        this.playerId = playerId;
+        this.playerName = playerName;
+        this.playerHand = playerHand;
+        this.playerAnswer = playerAnswer;
+        this.playerScore = playerScore;
+    }
+
     @Override
     public int getPlayerId() {
         return this.playerId;
@@ -29,12 +37,25 @@ public class PlayerImpl implements Player{
     }
 
     @Override
+    public void setPlayerHand(List<Slide> playerHand) {
+        this.playerHand = playerHand;
+    }
+    @Override
     public Slide getPlayerAnswer() {
         return this.playerAnswer;
     }
 
     @Override
+    public void setPlayerAnswer(Slide playerAnswer) {
+        this.playerAnswer = playerAnswer;
+    }
+    @Override
     public int getPlayerScore() {
         return this.playerScore;
+    }
+
+    @Override
+    public void setPlayerScore(int playerScore) {
+        this.playerScore = playerScore;
     }
 }

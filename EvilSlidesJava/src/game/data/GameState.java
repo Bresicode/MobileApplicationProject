@@ -5,26 +5,38 @@ import library.data.Slide;
 import java.util.List;
 
 /**
- * Interface providing methods to get game state data
+ * Interface providing methods to get and set game state data
  */
 public interface GameState {
     /**
-     * Get the score that is required to win game
+     * Gets the score that is required to win game
      * @return int scoreToWin
      */
     int getScoreToWin();
 
     /**
-     * Get a list of all players in the game
+     * Gets a list of all players in the game
      * @return List<Player> players
      */
     List<Player> getPlayers();
 
     /**
-     * Get a list of all slides that have been selected by the players
+     * Sets the list of all players in the game
+     * @param players List<Player> players
+     */
+    void setPlayers(List<Player> players);
+
+    /**
+     * Gets a list of all slides that have been selected by the players
      * @return List<Slide> playedCards
      */
     List<Slide> getPlayedCards();
+
+    /**
+     * Sets a list of all slides that have been selected by the players
+     * @param playedCards List<Slide> playerCards
+     */
+    void setPlayerCards(List<Slide> playedCards);
 
     /**
      * Gets a boolean whether the game is in judge phase or not
@@ -33,8 +45,19 @@ public interface GameState {
     boolean isJudgePhase();
 
     /**
+     * Sets a boolean whether the game is in judge phase or not
+     * @param judgePhase boolean
+     */
+    void setJudgePhase(boolean judgePhase);
+    /**
      * Gets the current question that has to be answered by the players
      * @return Slide question
      */
     Slide getQuestion();
+
+    /**
+     * Sets the current question that has to be answered by the players
+     * @param question Slide
+     */
+    void setQuestion(Slide question);
 }
