@@ -5,7 +5,7 @@ import library.data.Slide;
 import java.util.List;
 
 public class GameStateImpl implements GameState{
-    
+
     private int scoreToWin;
     private List<Player> players;
     private List<Slide> playedCards;
@@ -14,26 +14,26 @@ public class GameStateImpl implements GameState{
 
     @Override
     public int getScoreToWin() {
-        return 0;
+        return this.scoreToWin;
     }
 
     @Override
     public List<Player> getPlayers() {
-        return null;
+        return this.players;
     }
 
     @Override
     public List<Slide> getPlayedCards() {
-        return null;
+        return this.playedCards;
     }
 
     @Override
     public boolean isJudgePhase() {
-        return false;
+        return this.judgePhase;
     }
 
     @Override
     public Slide getQuestion() {
-        return null;
+        return this.question;
     }
 }
