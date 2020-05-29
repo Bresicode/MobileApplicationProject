@@ -10,53 +10,63 @@ import java.util.List;
 public interface GameState {
     /**
      * Gets the score that is required to win game
+     *
      * @return int scoreToWin
      */
     int getScoreToWin();
 
     /**
      * Gets a list of all players in the game
+     *
      * @return List<Player> players
      */
     List<Player> getPlayers();
 
     /**
      * Sets the list of all players in the game
+     *
      * @param players List<Player> players
      */
     void setPlayers(List<Player> players);
 
     /**
      * Gets a list of all slides that have been selected by the players
+     *
      * @return List<Slide> playedCards
      */
     List<Slide> getPlayedCards();
 
     /**
      * Sets a list of all slides that have been selected by the players
+     *
      * @param playedCards List<Slide> playerCards
      */
     void setPlayerCards(List<Slide> playedCards);
 
     /**
      * Gets a boolean whether the game is in judge phase or not
+     *
      * @return true if it's judge phase, else if it's not
      */
     boolean isJudgePhase();
 
     /**
      * Sets a boolean whether the game is in judge phase or not
+     *
      * @param judgePhase boolean
      */
     void setJudgePhase(boolean judgePhase);
+
     /**
      * Gets the current question that has to be answered by the players
+     *
      * @return Slide question
      */
     Slide getQuestion();
 
     /**
      * Sets the current question that has to be answered by the players
+     *
      * @param question Slide
      */
     void setQuestion(Slide question);

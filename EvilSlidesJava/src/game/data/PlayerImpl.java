@@ -5,7 +5,7 @@ import library.data.Slide;
 import java.util.List;
 
 
-public class PlayerImpl implements Player{
+public class PlayerImpl implements Player {
 
     private int playerId;
     private String playerName;
@@ -40,6 +40,7 @@ public class PlayerImpl implements Player{
     public void setPlayerHand(List<Slide> playerHand) {
         this.playerHand = playerHand;
     }
+
     @Override
     public Slide getPlayerAnswer() {
         return this.playerAnswer;
@@ -49,6 +50,7 @@ public class PlayerImpl implements Player{
     public void setPlayerAnswer(Slide playerAnswer) {
         this.playerAnswer = playerAnswer;
     }
+
     @Override
     public int getPlayerScore() {
         return this.playerScore;
