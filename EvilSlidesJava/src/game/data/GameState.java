@@ -23,25 +23,11 @@ public interface GameState {
     List<Player> getPlayers();
 
     /**
-     * Sets the list of all players in the game
-     *
-     * @param players List<Player> players
-     */
-    void setPlayers(List<Player> players);
-
-    /**
      * Gets a list of all slides that have been selected by the players
      *
      * @return List<Slide> playedCards
      */
     List<Slide> getPlayedCards();
-
-    /**
-     * Sets a list of all slides that have been selected by the players
-     *
-     * @param playedCards List<Slide> playerCards
-     */
-    void setPlayerCards(List<Slide> playedCards);
 
     /**
      * Gets a boolean whether the game is in judge phase or not

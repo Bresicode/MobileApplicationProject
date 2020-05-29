@@ -31,18 +31,8 @@ public class GameStateImpl implements GameState {
     }
 
     @Override
-    public void setPlayers(List<Player> players) {
-        this.players = players;
-    }
-
-    @Override
     public List<Slide> getPlayedCards() {
         return this.playedCards;
-    }
-
-    @Override
-    public void setPlayerCards(List<Slide> playedCards) {
-        this.playedCards = playedCards;
     }
 
     @Override
