@@ -5,7 +5,6 @@ import library.data.Slide;
 import java.util.List;
 
 public class GameStateImpl implements GameState {
-
     private int scoreToWin;
     private List<Player> players;
     private List<Slide> playedSlides;
