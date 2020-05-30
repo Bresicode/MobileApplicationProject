@@ -30,7 +30,7 @@ public interface Player {
     List<Slide> getPlayerHand();
 
     /**
-     * Gets the player's selected card
+     * Gets the player's selected Slide
      *
      * @return Slide selection
      */

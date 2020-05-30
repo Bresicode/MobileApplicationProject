@@ -1,7 +1,6 @@
 package game.control;
 
 import game.data.Player;
-import library.data.Slide;
 
 /**
  * Interface providing methods for GameState changes
@@ -18,4 +17,8 @@ public interface GameControl {
      */
     void removePlayer(Player player);
 
+    /**
+     * determines who won the judgePhase
+     */
+    void chooseWinner();
 }

@@ -25,9 +25,9 @@ public interface GameState {
     /**
      * Gets a list of all slides that have been selected by the players
      *
-     * @return List<Slide> playedCards
+     * @return List<Slide> playedSlides
      */
-    List<Slide> getPlayedCards();
+    List<Slide> getPlayedSlides();
 
     /**
      * Gets a boolean whether the game is in judge phase or not

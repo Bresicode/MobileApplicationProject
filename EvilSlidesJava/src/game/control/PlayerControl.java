@@ -27,5 +27,10 @@ public interface PlayerControl {
      */
     void raisePlayerScore(Player player);
 
+    /**
+     * sets a player's answer slide
+     * @param player Player who's answer has to be set
+     * @param slide Slide that will become the answer
+     */
     void choosePlayerAnswer(Player player, Slide slide);
 }

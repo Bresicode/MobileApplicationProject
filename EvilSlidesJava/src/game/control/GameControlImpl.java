@@ -2,22 +2,30 @@ package game.control;
 
 import game.data.GameState;
 import game.data.Player;
-import library.data.Slide;
 
 public class GameControlImpl implements GameControl {
-    private GameState gamemodel;
+    private GameState game;
+    private PlayerControl pControl;
 
-    public GameControlImpl(GameState gamemodel) {
-        this.gamemodel = gamemodel;
+    public GameControlImpl(GameState game) {
+        this.game = game;
+        this.pControl = new PlayerControlImpl();
     }
 
     @Override
     public void addPlayer(Player player) {
-        gamemodel.getPlayers().add(player);
+        game.getPlayers().add(player);
     }
 
     @Override
     public void removePlayer(Player player) {
-        gamemodel.getPlayers().remove(player);
+        game.getPlayers().remove(player);
     }
+
+    @Override
+    public void chooseWinner() {
+
+    }
+
+
 }
