@@ -1,4 +1,4 @@
-package library.data;
+package com.example.evilslides.library.data;
 
 
 import java.util.List;

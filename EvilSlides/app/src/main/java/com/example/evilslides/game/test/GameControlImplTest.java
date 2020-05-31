@@ -1,4 +1,4 @@
-package game.test;
+package com.example.evilslides.game.test;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

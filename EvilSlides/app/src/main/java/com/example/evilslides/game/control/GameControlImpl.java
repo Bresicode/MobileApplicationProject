@@ -1,4 +1,4 @@
-package game.control;
+package com.example.evilslides.game.control;
 
 import game.data.GameState;
 import game.data.Player;

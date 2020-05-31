@@ -1,4 +1,4 @@
-package game.data;
+package com.example.evilslides.game.data;
 
 import library.data.Slide;
 

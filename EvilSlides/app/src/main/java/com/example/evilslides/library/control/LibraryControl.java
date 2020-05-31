@@ -1,4 +1,4 @@
-package library.control;
+package com.example.evilslides.library.control;
 
 import library.data.Deck;
 import library.data.Library;
