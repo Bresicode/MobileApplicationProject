@@ -1,6 +1,8 @@
-package com.example.evilslides.game.data;
+package com.example.evilslides.game.model;
 
-import library.data.Slide;
+
+
+import com.example.evilslides.library.model.Slide;
 
 import java.util.List;
 

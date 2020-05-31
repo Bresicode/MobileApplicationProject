@@ -1,8 +1,9 @@
 package com.example.evilslides.library.control;
 
-import library.data.Deck;
-import library.data.Library;
-import library.data.Slide;
+
+import com.example.evilslides.library.model.Deck;
+import com.example.evilslides.library.model.Library;
+import com.example.evilslides.library.model.Slide;
 
 public interface LibraryControl {
     /**

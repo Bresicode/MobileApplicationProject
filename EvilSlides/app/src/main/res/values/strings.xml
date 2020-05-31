@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">EvilSlides</string>
-    <string name="apptitel">EvilSlides</string>
     <string name="playbutton_text">Play</string>
-    <string name="darkmodecheckbox_text">Darkmode</string>
+    <string name="librarybutton_text">Library</string>
 </resources>

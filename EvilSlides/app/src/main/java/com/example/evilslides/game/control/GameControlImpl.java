@@ -1,8 +1,9 @@
 package com.example.evilslides.game.control;
 
-import game.data.GameState;
-import game.data.Player;
-import library.data.Slide;
+
+import com.example.evilslides.game.model.GameState;
+import com.example.evilslides.game.model.Player;
+import com.example.evilslides.library.model.Slide;
 
 public class GameControlImpl implements GameControl {
     public GameControlImpl() {
