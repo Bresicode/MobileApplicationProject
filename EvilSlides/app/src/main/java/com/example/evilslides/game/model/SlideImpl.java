@@ -1,4 +1,6 @@
-package com.example.evilslides.library.model;
+package com.example.evilslides.game.model;
+
+import androidx.annotation.NonNull;
 
 public class SlideImpl implements Slide {
     private String slideText;
@@ -26,4 +28,15 @@ public class SlideImpl implements Slide {
         return this.question;
     }
 
+    @NonNull
+    @Override
+    public String toString() {
+        String s = this.slideText+"\n"+ this.slideId+"\n";
+        if(isQuestion() == true){
+            s+="true\n";
+        }else {
+            s+="false\n";
+        }
+        return s;
+    }
 }

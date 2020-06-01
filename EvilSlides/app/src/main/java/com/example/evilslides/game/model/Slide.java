@@ -1,4 +1,4 @@
-package com.example.evilslides.library.model;
+package com.example.evilslides.game.model;
 
 public interface Slide {
     /**

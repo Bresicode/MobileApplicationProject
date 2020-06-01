@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.evilslides">
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,13 +8,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".library.view.SlideEditActivity"
-            android:parentActivityName=".library.view.LibraryActivity"></activity>
+        <activity android:name=".game.view.SlideEditActivity"
+            android:parentActivityName=".game.view.LibraryActivity"></activity>
         <activity android:name=".game.view.GameActivity"
-            android:parentActivityName=".menu.view.MenuActivity"/>
-        <activity android:name=".library.view.LibraryActivity"
-            android:parentActivityName=".menu.view.MenuActivity"/>
-        <activity android:name=".menu.view.MenuActivity">
+            android:parentActivityName=".game.view.MenuActivity"/>
+        <activity android:name=".game.view.LibraryActivity"
+            android:parentActivityName=".game.view.MenuActivity"/>
+        <activity android:name=".game.view.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

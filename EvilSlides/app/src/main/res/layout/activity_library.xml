@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".library.view.LibraryActivity">
+    tools:context=".game.view.LibraryActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/decklist"
@@ -28,5 +28,6 @@
         android:onClick="startDeckEdit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

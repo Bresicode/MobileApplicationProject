@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".library.view.SlideEditActivity">
+    tools:context=".game.view.SlideEditActivity">
 
     <CheckBox
         android:id="@+id/isquestioncheckbox"
@@ -41,4 +41,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/isquestioncheckbox"
         android:onClick="slideHinzufuegen"/>
+
+    <Button
+        android:id="@+id/savebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/saveslidebutton_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/confirmbutton"
+        android:onClick="save"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
