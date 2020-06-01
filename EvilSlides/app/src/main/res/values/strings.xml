@@ -2,4 +2,11 @@
     <string name="app_name">EvilSlides</string>
     <string name="playbutton_text">Play</string>
     <string name="librarybutton_text">Library</string>
+    <string name="adddeckbutton_text">Add</string>
+    <string name="removedeckbutton_text">Remove</string>
+    <string name="editdeckbutton_text">Edit</string>
+    <string name="saveslidebutton_text">Save</string>
+    <string name="isquestioncheckbox_text">Question</string>
+    <string name="slideedit_text">Slidetext</string>
+    <string name="confirmbutton_text">Confirm</string>
 </resources>

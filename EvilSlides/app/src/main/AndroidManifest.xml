@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".library.view.DeckEditActivity"
+        <activity android:name=".library.view.SlideEditActivity"
             android:parentActivityName=".library.view.LibraryActivity"></activity>
         <activity android:name=".game.view.GameActivity"
             android:parentActivityName=".menu.view.MenuActivity"/>
