@@ -31,11 +31,12 @@ public class SlideEditActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deck_edit);
+
         slides = new ArrayList<SlideImpl>();
         editText = findViewById(R.id.editSlideText);
         checkQuestion = findViewById(R.id.isquestioncheckbox);
         fm = new FileManagerImpl();
-        //fm.readFromFile(file, this);
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
