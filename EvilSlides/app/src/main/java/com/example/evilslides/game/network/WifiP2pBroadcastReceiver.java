@@ -1,4 +1,4 @@
-package com.example.evilslides.game.listener;
+package com.example.evilslides.game.network;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

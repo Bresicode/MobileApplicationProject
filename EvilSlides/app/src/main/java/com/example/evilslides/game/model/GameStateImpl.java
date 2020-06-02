@@ -2,6 +2,8 @@ package com.example.evilslides.game.model;
 
 
 
+import com.example.evilslides.library.model.Slide;
+
 import java.util.List;
 
 public class GameStateImpl implements GameState {

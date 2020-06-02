@@ -1,8 +1,8 @@
-package com.example.evilslides.game.control;
+package com.example.evilslides.library.control;
 
 import android.content.Context;
-import android.util.Log;
-import com.example.evilslides.game.model.SlideImpl;
+
+import com.example.evilslides.library.model.SlideImpl;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -34,9 +34,15 @@ public class FileManagerImpl implements FileManager {
     }
 
     @Override
-    public List<SlideImpl> readFromFile(File file, Context context) throws FileNotFoundException {
+    public List<SlideImpl> readFromFile(File file, Context context){
         List<SlideImpl> slides = new ArrayList<SlideImpl>();
-        FileInputStream fis = context.openFileInput(file.getName());
+        FileInputStream fis = null;
+        try {
+            fis = context.openFileInput(file.getName());
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return new ArrayList<SlideImpl>();
+        }
         InputStreamReader inputStreamReader =
                 new InputStreamReader(fis, StandardCharsets.UTF_8);
         try (BufferedReader reader = new BufferedReader(inputStreamReader)) {

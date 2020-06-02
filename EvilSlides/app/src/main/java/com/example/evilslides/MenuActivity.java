@@ -1,4 +1,4 @@
-package com.example.evilslides.game.view;
+package com.example.evilslides;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.evilslides.R;
+import com.example.evilslides.game.view.GameActivity;
+import com.example.evilslides.library.view.LibraryActivity;
 
 public class MenuActivity extends AppCompatActivity {
 

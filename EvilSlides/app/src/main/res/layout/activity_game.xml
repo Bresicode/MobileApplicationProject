@@ -6,12 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".game.view.GameActivity">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="409dp"
+    <Button
+        android:id="@+id/searchpeerbutton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/searchpeerbutton_text"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="wifi"/>
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/connecttopeersbutton_text"
+        app:layout_constraintStart_toEndOf="@+id/searchpeerbutton"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="connect"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

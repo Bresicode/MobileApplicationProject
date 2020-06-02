@@ -1,4 +1,4 @@
-package com.example.evilslides.game.model;
+package com.example.evilslides.library.model;
 
 import androidx.annotation.NonNull;
 

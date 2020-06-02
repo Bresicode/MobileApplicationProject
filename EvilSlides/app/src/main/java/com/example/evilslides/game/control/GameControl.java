@@ -4,7 +4,7 @@ package com.example.evilslides.game.control;
 
 import com.example.evilslides.game.model.GameState;
 import com.example.evilslides.game.model.Player;
-import com.example.evilslides.game.model.Slide;
+import com.example.evilslides.library.model.Slide;
 
 /**
  * Interface providing methods for GameState and Player changes

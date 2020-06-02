@@ -1,8 +1,8 @@
-package com.example.evilslides.game.control;
+package com.example.evilslides.library.control;
 
 import android.content.Context;
 
-import com.example.evilslides.game.model.SlideImpl;
+import com.example.evilslides.library.model.SlideImpl;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,5 +22,5 @@ public interface FileManager {
      * @throws FileNotFoundException if the file that should've been read wasn't found
      * @return List<SlideImpl> list of slides
      */
-    List<SlideImpl> readFromFile(File file, Context context) throws FileNotFoundException;
+    List<SlideImpl> readFromFile(File file, Context context);
 }

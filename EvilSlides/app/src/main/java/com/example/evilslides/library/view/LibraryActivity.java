@@ -1,4 +1,4 @@
-package com.example.evilslides.game.view;
+package com.example.evilslides.library.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,14 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.evilslides.R;
-import com.example.evilslides.game.control.FileManager;
-import com.example.evilslides.game.control.FileManagerImpl;
-import com.example.evilslides.game.control.MyAdapter;
-import com.example.evilslides.game.model.SlideImpl;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.List;
+import com.example.evilslides.library.control.DataBuilder;
 
 
 public class LibraryActivity extends AppCompatActivity {
@@ -25,26 +18,18 @@ public class LibraryActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    FileManager fm;
-    File file;
-    List<SlideImpl> slides;
+    private DataBuilder db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-        //build data model from file
-        file = new File(this.getFilesDir(), "data");
-        fm = new FileManagerImpl();
-        try {
-            slides = fm.readFromFile(file, this);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        db = new DataBuilder(this);
 
         //make recyclerview and fill it
         recyclerView = findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
-        myAdapter = new MyAdapter(slides);
+        myAdapter = new MyAdapter(db.getSlides());
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myAdapter);

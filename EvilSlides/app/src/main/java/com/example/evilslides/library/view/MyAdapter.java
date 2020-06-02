@@ -1,4 +1,4 @@
-package com.example.evilslides.game.control;
+package com.example.evilslides.library.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.evilslides.R;
-import com.example.evilslides.game.model.SlideImpl;
+import com.example.evilslides.library.model.SlideImpl;
 
 import java.util.List;
 
