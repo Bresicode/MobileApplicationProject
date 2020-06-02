@@ -40,15 +40,14 @@ public class LibraryActivity extends AppCompatActivity {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         //make recyclerview and fill it
         recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         myAdapter = new MyAdapter(slides);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myAdapter);
-
 
     }
 

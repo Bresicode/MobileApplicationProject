@@ -24,7 +24,6 @@ public class FileManagerImpl implements FileManager {
         for (SlideImpl s : slides) {
             fileContents += s.toString();
         }
-        Log.d("print", fileContents);
         try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE)) {
             fos.write(fileContents.getBytes());
         } catch (FileNotFoundException e) {
