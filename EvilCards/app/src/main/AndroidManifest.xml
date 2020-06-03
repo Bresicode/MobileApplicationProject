@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.evilslides">
+    package="com.example.evilcards">
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -14,13 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".library.view.SlideEditActivity"
-            android:parentActivityName=".library.view.LibraryActivity"></activity>
-        <activity android:name=".game.view.GameActivity"
-            android:parentActivityName=".MenuActivity"/>
-        <activity android:name=".library.view.LibraryActivity"
-            android:parentActivityName=".MenuActivity"/>
-        <activity android:name=".MenuActivity">
+        <activity android:name="com.example.evilcards.library.view.SlideEditActivity"
+            android:parentActivityName="com.example.evilcards.library.view.LibraryActivity"></activity>
+        <activity android:name="com.example.evilcards.game.view.GameActivity"
+            android:parentActivityName="com.example.evilcards.menu.view.MenuActivity"/>
+        <activity android:name="com.example.evilcards.library.view.LibraryActivity"
+            android:parentActivityName="com.example.evilcards.menu.view.MenuActivity"/>
+        <activity android:name="com.example.evilcards.menu.view.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
