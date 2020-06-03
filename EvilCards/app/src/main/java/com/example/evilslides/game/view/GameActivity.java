@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.evilslides.R;
 import com.example.evilslides.game.network.DiscoverPeersListener;
-import com.example.evilslides.game.network.NetworkController;
+import com.example.evilslides.game.network.NetworkControllerImpl;
 import com.example.evilslides.game.network.WifiP2pBroadcastReceiver;
 import com.example.evilslides.library.control.LibraryAccessor;
 
@@ -17,13 +17,13 @@ public class GameActivity extends AppCompatActivity {
 
     LibraryAccessor libraryAccessor;
     private WifiP2pBroadcastReceiver receiver;
-    private NetworkController nc;
+    private NetworkControllerImpl nc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        nc = new NetworkController(this);
+        nc = new NetworkControllerImpl(this);
         libraryAccessor = new LibraryAccessor(this);
         receiver = new WifiP2pBroadcastReceiver(nc.getWifiP2pManager(), nc.getChannel(), this);
     }

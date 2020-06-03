@@ -12,8 +12,6 @@ public class GameStateImpl implements GameState {
     private List<Card> playedCards;
     private Card question;
 
-
-
     public GameStateImpl(List<Player> players, List<Card> gameDeck) {
         this.players = players;
         this.gameDeck = gameDeck;
