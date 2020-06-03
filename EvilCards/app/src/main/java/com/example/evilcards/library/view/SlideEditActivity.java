@@ -33,7 +33,7 @@ public class SlideEditActivity extends AppCompatActivity {
     public void slideHinzufuegen(View view) {
         String text = editText.getText().toString();
         boolean isQuestion = checkQuestion.isChecked();
-        db.getSlides().add(new CardImpl(text, db.getSlides().size(), isQuestion));
+        db.getCards().add(new CardImpl(text, db.getCards().size(), isQuestion));
         Toast toast = Toast.makeText(this, "Erfolgreich hinzugefügt!", Toast.LENGTH_SHORT);
         toast.show();
     }
@@ -41,9 +41,10 @@ public class SlideEditActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        db.getFm().writeToFile(db.getFile(), this, db.getSlides());
+        db.getFm().writeToFile(db.getFile(), this, db.getCards());
         Toast toast = Toast.makeText(this, "Erfolgreich in File abgespeichert!", Toast.LENGTH_SHORT);
         toast.show();
+        finish();
     }
 
 }

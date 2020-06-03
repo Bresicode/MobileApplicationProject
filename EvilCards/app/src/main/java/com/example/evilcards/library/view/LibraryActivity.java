@@ -29,7 +29,7 @@ public class LibraryActivity extends AppCompatActivity {
         //make recyclerview and fill it
         recyclerView = findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
-        myAdapter = new MyAdapter(db.getSlides());
+        myAdapter = new MyAdapter(db.getCards());
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myAdapter);

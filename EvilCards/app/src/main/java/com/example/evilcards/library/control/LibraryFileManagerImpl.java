@@ -19,11 +19,11 @@ import java.util.List;
 public class LibraryFileManagerImpl implements LibraryFileManager {
 
     @Override
-    public void writeToFile(File file, Context context, List<CardImpl> slides) {
+    public void writeToFile(File file, Context context, List<CardImpl> cards) {
         String filename = "data";
         String fileContents = "";
-        for (CardImpl s : slides) {
-            fileContents += s.toString();
+        for (CardImpl card : cards) {
+            fileContents += card.toString();
         }
         try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE)) {
             fos.write(fileContents.getBytes());
@@ -36,7 +36,7 @@ public class LibraryFileManagerImpl implements LibraryFileManager {
 
     @Override
     public List<CardImpl> readFromFile(File file, Context context){
-        List<CardImpl> slides = new ArrayList<CardImpl>();
+        List<CardImpl> cards = new ArrayList<CardImpl>();
         FileInputStream fis = null;
         try {
             fis = context.openFileInput(file.getName());
@@ -49,12 +49,12 @@ public class LibraryFileManagerImpl implements LibraryFileManager {
         try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
             String line = reader.readLine();
             while (line != null) {
-                slides.add( new CardImpl(line, Integer.parseInt(reader.readLine()) ,Boolean.parseBoolean(reader.readLine())));
+                cards.add( new CardImpl(line, Integer.parseInt(reader.readLine()) ,Boolean.parseBoolean(reader.readLine())));
                 line = reader.readLine();
             }
         } catch (IOException e) {
             // Error occurred when opening raw file for reading.
         }
-        return slides;
+        return cards;
     }
 }
