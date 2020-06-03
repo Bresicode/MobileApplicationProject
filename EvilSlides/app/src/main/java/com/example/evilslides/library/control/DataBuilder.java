@@ -1,9 +1,6 @@
 package com.example.evilslides.library.control;
 
 import android.content.Context;
-
-import com.example.evilslides.library.control.FileManager;
-import com.example.evilslides.library.control.FileManagerImpl;
 import com.example.evilslides.library.model.SlideImpl;
 
 import java.io.File;
