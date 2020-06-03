@@ -1,32 +1,29 @@
 package com.example.evilslides.library.control;
 
-import android.content.Context;
-
 import com.example.evilslides.library.model.CardImpl;
 
 import java.io.File;
 import java.util.List;
 
-public class LibraryAccessor {
-    LibraryFileManager fm;
-    File file;
-    List<CardImpl> slides;
+/**
+ * Interface providing getters for a LibraryFileManager file and a List<CardImpl>
+ */
+public interface LibraryAccessor {
+    /**
+     * gets a library file manager
+     * @return LibraryFileManager fm
+     */
+    LibraryFileManager getFm();
 
-    public LibraryFileManager getFm() {
-        return fm;
-    }
+    /**
+     * gets a file
+     * @return File file
+     */
+    File getFile();
 
-    public File getFile() {
-        return file;
-    }
-
-    public List<CardImpl> getSlides() {
-        return slides;
-    }
-
-    public LibraryAccessor(Context context) {
-        file = new File(context.getFilesDir(), "data");
-        fm = new LibraryFileManagerImpl();
-        slides = fm.readFromFile(file, context);
-    }
+    /**
+     * gets a list of cards
+     * @return List<CardImpl> cards
+     */
+    List<CardImpl> getCards();
 }

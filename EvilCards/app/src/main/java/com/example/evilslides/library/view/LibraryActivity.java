@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.evilslides.R;
-import com.example.evilslides.library.control.LibraryAccessor;
+import com.example.evilslides.library.control.LibraryAccessorImpl;
 
 
 public class LibraryActivity extends AppCompatActivity {
@@ -18,13 +18,13 @@ public class LibraryActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private LibraryAccessor db;
+    private LibraryAccessorImpl db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-        db = new LibraryAccessor(this);
+        db = new LibraryAccessorImpl(this);
 
         //make recyclerview and fill it
         recyclerView = findViewById(R.id.recyclerView);

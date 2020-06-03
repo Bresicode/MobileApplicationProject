@@ -6,7 +6,7 @@ import com.example.evilslides.library.model.Card;
 import java.util.List;
 
 /**
- * Interface providing methods to get and set player data
+ * Interface providing methods to get and set player fields
  */
 public interface Player {
 
@@ -25,23 +25,23 @@ public interface Player {
     String getPlayerName();
 
     /**
-     * Gets a list of the slides currently in the player's hand
+     * Gets a list of the cards currently in the player's hand
      *
-     * @return List<Slide> playerHand
+     * @return List<Card> playerHand
      */
     List<Card> getPlayerHand();
 
     /**
-     * Gets the player's selected Slide
+     * Gets the player's selected Card
      *
-     * @return Slide selection
+     * @return Card selection
      */
     Card getPlayerAnswer();
 
     /**
-     * Sets the players answer slide
+     * Sets the players answer card
      *
-     * @param playerAnswer Slide playerName
+     * @param playerAnswer Card
      */
     void setPlayerAnswer(Card playerAnswer);
 

@@ -9,13 +9,13 @@ import com.example.evilslides.R;
 import com.example.evilslides.game.network.DiscoverPeersListener;
 import com.example.evilslides.game.network.NetworkControllerImpl;
 import com.example.evilslides.game.network.WifiP2pBroadcastReceiver;
-import com.example.evilslides.library.control.LibraryAccessor;
+import com.example.evilslides.library.control.LibraryAccessorImpl;
 
 public class GameActivity extends AppCompatActivity {
     public static final String TAG = "GameActivity";
 
 
-    LibraryAccessor libraryAccessor;
+    LibraryAccessorImpl libraryAccessorImpl;
     private WifiP2pBroadcastReceiver receiver;
     private NetworkControllerImpl nc;
 
@@ -24,7 +24,7 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         nc = new NetworkControllerImpl(this);
-        libraryAccessor = new LibraryAccessor(this);
+        libraryAccessorImpl = new LibraryAccessorImpl(this);
         receiver = new WifiP2pBroadcastReceiver(nc.getWifiP2pManager(), nc.getChannel(), this);
     }
 

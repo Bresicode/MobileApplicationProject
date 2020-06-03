@@ -6,7 +6,7 @@ import com.example.evilslides.library.model.Card;
 import java.util.List;
 
 /**
- * Interface providing methods to get and set game state data
+ * Interface providing methods to get and set gameState fields
  */
 public interface GameState {
 

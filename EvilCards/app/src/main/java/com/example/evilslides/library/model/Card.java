@@ -1,5 +1,8 @@
 package com.example.evilslides.library.model;
 
+/**
+ * Interface providing getters for Card fields
+ */
 public interface Card {
     /**
      * returns the text of the slide

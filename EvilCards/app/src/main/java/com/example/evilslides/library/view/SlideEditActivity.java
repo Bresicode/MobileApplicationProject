@@ -9,14 +9,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.evilslides.R;
-import com.example.evilslides.library.control.LibraryAccessor;
+import com.example.evilslides.library.control.LibraryAccessorImpl;
 import com.example.evilslides.library.model.CardImpl;
 
 public class SlideEditActivity extends AppCompatActivity {
     private static String TAG = "DeckEditActivity";
     EditText editText;
     CheckBox checkQuestion;
-    LibraryAccessor db;
+    LibraryAccessorImpl db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class SlideEditActivity extends AppCompatActivity {
 
         editText = findViewById(R.id.editSlideText);
         checkQuestion = findViewById(R.id.isquestioncheckbox);
-        db = new LibraryAccessor(this);
+        db = new LibraryAccessorImpl(this);
 
     }
 
