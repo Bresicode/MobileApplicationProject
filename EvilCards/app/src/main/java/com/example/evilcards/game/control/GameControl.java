@@ -10,7 +10,7 @@ public interface GameControl {
     /**
      * fills the players hands with random non question cards
      */
-    void dealSlides(GameState gameState);
+    void dealCards(GameState gameState);
 
     /**
      * sets a random question in gameState

@@ -7,7 +7,7 @@
     <string name="editdeckbutton_text">Edit</string>
     <string name="saveslidebutton_text">Save</string>
     <string name="isquestioncheckbox_text">Question</string>
-    <string name="slideedit_text">Slidetext</string>
+    <string name="slideedit_text">CardText</string>
     <string name="confirmbutton_text">Confirm</string>
     <string name="searchpeerbutton_text">SearchWifiPeers</string>
     <string name="connecttopeersbutton_text">Connect to Peers</string>

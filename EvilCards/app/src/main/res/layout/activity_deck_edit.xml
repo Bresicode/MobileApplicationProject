@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".library.view.SlideEditActivity">
+    tools:context=".library.view.CardEditActivity">
 
     <CheckBox
         android:id="@+id/isquestioncheckbox"
@@ -40,6 +40,6 @@
         android:text="@string/confirmbutton_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/isquestioncheckbox"
-        android:onClick="slideHinzufuegen"/>
+        android:onClick="cardHinzufuegen"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

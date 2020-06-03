@@ -37,7 +37,7 @@ public class LibraryActivity extends AppCompatActivity {
     }
 
     public void startDeckEdit(View view) {
-        Intent intent = new Intent(this, SlideEditActivity.class);
+        Intent intent = new Intent(this, CardEditActivity.class);
         startActivity(intent);
     }
 

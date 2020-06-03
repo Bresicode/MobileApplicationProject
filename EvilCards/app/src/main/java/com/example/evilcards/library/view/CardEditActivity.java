@@ -12,7 +12,7 @@ import com.example.evilcards.R;
 import com.example.evilcards.library.control.LibraryAccessorImpl;
 import com.example.evilcards.library.model.CardImpl;
 
-public class SlideEditActivity extends AppCompatActivity {
+public class CardEditActivity extends AppCompatActivity {
     private static String TAG = "DeckEditActivity";
     EditText editText;
     CheckBox checkQuestion;
@@ -30,7 +30,7 @@ public class SlideEditActivity extends AppCompatActivity {
 
     }
 
-    public void slideHinzufuegen(View view) {
+    public void cardHinzufuegen(View view) {
         String text = editText.getText().toString();
         boolean isQuestion = checkQuestion.isChecked();
         db.getCards().add(new CardImpl(text, db.getCards().size(), isQuestion));

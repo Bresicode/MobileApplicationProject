@@ -7,7 +7,7 @@ public class GameControlImpl implements GameControl {
 
 
     @Override
-    public void dealSlides(GameState gameState) {
+    public void dealCards(GameState gameState) {
 
     }
 

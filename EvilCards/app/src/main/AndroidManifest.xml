@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.example.evilcards.library.view.SlideEditActivity"
+        <activity android:name="com.example.evilcards.library.view.CardEditActivity"
             android:parentActivityName="com.example.evilcards.library.view.LibraryActivity"></activity>
         <activity android:name="com.example.evilcards.game.view.GameActivity"
             android:parentActivityName="com.example.evilcards.menu.view.MenuActivity"/>
