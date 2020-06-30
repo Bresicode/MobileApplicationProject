@@ -13,7 +13,7 @@ import com.example.evilcards.library.control.LibraryAccessorImpl;
 
 
 public class LibraryActivity extends AppCompatActivity {
-    private static String TAG = "LibraryActivity";
+    private static String TAG = LibraryActivity.class.getName();
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter myAdapter;
@@ -34,6 +34,17 @@ public class LibraryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myAdapter);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        recyclerView = findViewById(R.id.recyclerView);
+        layoutManager = new LinearLayoutManager(this);
+        myAdapter = new MyAdapter(db.getCards());
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(myAdapter);
     }
 
     public void startDeckEdit(View view) {

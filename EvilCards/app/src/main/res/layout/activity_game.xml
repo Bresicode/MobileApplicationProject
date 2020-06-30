@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="wifi"
-        android:text="@string/searchpeerbutton_text"
+        android:text="@string/wifi_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,9 +24,18 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:onClick="connect"
-        android:text="@string/connecttopeersbutton_text"
+        android:text="@string/connect_text"
         app:layout_constraintStart_toEndOf="@+id/searchpeerbutton"
         app:layout_constraintTop_toTopOf="parent"
 
         />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

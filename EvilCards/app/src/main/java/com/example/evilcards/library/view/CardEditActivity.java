@@ -13,7 +13,7 @@ import com.example.evilcards.library.control.LibraryAccessorImpl;
 import com.example.evilcards.library.model.CardImpl;
 
 public class CardEditActivity extends AppCompatActivity {
-    private static String TAG = "DeckEditActivity";
+    private static String TAG = CardEditActivity.class.getName();
     EditText editText;
     CheckBox checkQuestion;
     LibraryAccessorImpl db;
@@ -34,6 +34,7 @@ public class CardEditActivity extends AppCompatActivity {
         String text = editText.getText().toString();
         boolean isQuestion = checkQuestion.isChecked();
         db.getCards().add(new CardImpl(text, db.getCards().size(), isQuestion));
+        db.getFm().writeToFile(db.getFile(), this, db.getCards());
         Toast toast = Toast.makeText(this, "Erfolgreich hinzugefügt!", Toast.LENGTH_SHORT);
         toast.show();
     }
@@ -41,9 +42,6 @@ public class CardEditActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        db.getFm().writeToFile(db.getFile(), this, db.getCards());
-        Toast toast = Toast.makeText(this, "Erfolgreich in File abgespeichert!", Toast.LENGTH_SHORT);
-        toast.show();
         finish();
     }
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">EvilSlides</string>
+    <string name="app_name">EvilCards</string>
     <string name="playbutton_text">Play</string>
     <string name="librarybutton_text">Library</string>
     <string name="adddeckbutton_text">Add</string>
@@ -9,6 +9,6 @@
     <string name="isquestioncheckbox_text">Question</string>
     <string name="slideedit_text">CardText</string>
     <string name="confirmbutton_text">Confirm</string>
-    <string name="searchpeerbutton_text">SearchWifiPeers</string>
-    <string name="connecttopeersbutton_text">Connect to Peers</string>
+    <string name="wifi_text">wifi</string>
+    <string name="connect_text">connect</string>
 </resources>
