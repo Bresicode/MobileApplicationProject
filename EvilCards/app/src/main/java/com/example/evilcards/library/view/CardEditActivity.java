@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +15,7 @@ public class CardEditActivity extends AppCompatActivity {
     private static String TAG = CardEditActivity.class.getName();
     EditText editText;
     CheckBox checkQuestion;
-    LibraryAccessorImpl db;
+    LibraryAccessorImpl libraryAccessor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,25 +23,23 @@ public class CardEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deck_edit);
 
-        editText = findViewById(R.id.editSlideText);
+        editText = findViewById(R.id.editCardText);
         checkQuestion = findViewById(R.id.isquestioncheckbox);
-        db = new LibraryAccessorImpl(this);
+        libraryAccessor = new LibraryAccessorImpl(this);
 
     }
 
     public void cardHinzufuegen(View view) {
         String text = editText.getText().toString();
         boolean isQuestion = checkQuestion.isChecked();
-        db.getCards().add(new CardImpl(text, db.getCards().size(), isQuestion));
-        db.getFm().writeToFile(db.getFile(), this, db.getCards());
-        Toast toast = Toast.makeText(this, "Erfolgreich hinzugefügt!", Toast.LENGTH_SHORT);
-        toast.show();
+        libraryAccessor.getCards().add(new CardImpl(text, libraryAccessor.getCards().size(), isQuestion));
+        libraryAccessor.getFm().writeToFile(libraryAccessor.getFile(), this, libraryAccessor.getCards());
+        finish();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        finish();
     }
 
 }

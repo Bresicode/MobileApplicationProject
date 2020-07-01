@@ -10,17 +10,18 @@ import com.example.evilcards.game.model.PlayerImpl;
 import com.example.evilcards.library.model.Card;
 import com.example.evilcards.library.model.CardImpl;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-class GameModelTest {
+class GameControlTest {
     private List<CardImpl> testGameDeckEmpty;
     private List<PlayerImpl> testPlayersEmpty;
     private PlayerImpl testPlayer1;
@@ -42,8 +43,8 @@ class GameModelTest {
         testCard1 = new CardImpl("TestText1", 1, false);
         testCard2 = new CardImpl("TestText2", 2, false);
         testCard3 = new CardImpl("TestText3", 3, false);
-        testCard4 = new CardImpl("TestQuestion1",4, true);
-        testCard5 = new CardImpl("TestQuestion1",5, true);
+        testCard4 = new CardImpl("TestQuestion1", 4, true);
+        testCard5 = new CardImpl("TestQuestion1", 5, true);
 
         //testplayers
         testPlayer1 = new PlayerImpl(1, "TestPlayer1");
@@ -72,7 +73,7 @@ class GameModelTest {
      * Prüft ob Spielerhände nicht leer sind, genau 5 Karten enthält und ob es sich bei den Karten nicht um Fragen handelt
      */
     @Test
-    void TestDealCardsGut(){
+    void TestDealCardsGut() {
         testGameState = new GameStateImpl(testPlayersFilled, testGameDeckFilled);
         GameControl gc = new GameControlImpl();
         gc.dealCards(testGameState);
@@ -80,7 +81,7 @@ class GameModelTest {
             assertFalse(player.getPlayerHand().isEmpty());
             assertTrue(player.getPlayerHand().size() == 5);
             for (Card card : player.getPlayerHand()
-                 ) {
+            ) {
                 assertFalse(card.isQuestion());
             }
         }
@@ -90,7 +91,7 @@ class GameModelTest {
      * Prüft ob bei leerer Spielerliste oder leerem Spieldeck eine IllegalStateException geworfen wird
      */
     @Test
-    void TestDealCardsSchlecht(){
+    void TestDealCardsSchlecht() {
         testGameState = new GameStateImpl(testPlayersFilled, testGameDeckEmpty);
         GameControl gc = new GameControlImpl();
 
@@ -113,7 +114,7 @@ class GameModelTest {
      * Prüft ob Card mit isQuestion true gewählt wurde und nicht null ist
      */
     @Test
-    void TestRandomizeQuestionGut(){
+    void TestRandomizeQuestionGut() {
         testGameState = new GameStateImpl(testPlayersFilled, testGameDeckFilled);
         GameControl gc = new GameControlImpl();
         gc.randomizeQuestion(testGameState);
@@ -125,7 +126,7 @@ class GameModelTest {
      * Prüft ob IllegalStateException geworfen wird, falls das GameDeck leer ist
      */
     @Test
-    void TestRandomizeQuestionSchlecht(){
+    void TestRandomizeQuestionSchlecht() {
         testGameState = new GameStateImpl(testPlayersFilled, testGameDeckEmpty);
         GameControl gc = new GameControlImpl();
 

@@ -10,7 +10,7 @@ import java.util.List;
 public class LibraryAccessorImpl implements LibraryAccessor {
     LibraryFileManager fm;
     File file;
-    List<CardImpl> slides;
+    List<CardImpl> cards;
 
     @Override
     public LibraryFileManager getFm() {
@@ -24,12 +24,12 @@ public class LibraryAccessorImpl implements LibraryAccessor {
 
     @Override
     public List<CardImpl> getCards() {
-        return slides;
+        return cards;
     }
 
     public LibraryAccessorImpl(Context context) {
         file = new File(context.getFilesDir(), "data");
         fm = new LibraryFileManagerImpl();
-        slides = fm.readFromFile(file, context);
+        cards = fm.readFromFile(file, context);
     }
 }

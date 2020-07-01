@@ -1,10 +1,13 @@
 package com.example.evilcards.game.view;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.wifi.WifiManager;
 import android.net.wifi.WpsInfo;
 import android.net.wifi.p2p.WifiP2pConfig;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.os.Bundle;
-import android.util.Log;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,7 +53,6 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-
         //network setup
         nc = new NetworkControllerImpl(this);
         peers = new ArrayList<WifiP2pDevice>();
@@ -108,9 +110,11 @@ public class GameActivity extends AppCompatActivity {
     public void showMsg(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-    public void setStatusText(String text){
+
+    public void setStatusText(String text) {
         statusText.setText(text);
     }
+
     public List<WifiP2pDevice> getPeers() {
         return peers;
     }

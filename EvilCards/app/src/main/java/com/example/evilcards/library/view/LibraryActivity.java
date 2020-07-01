@@ -18,30 +18,23 @@ public class LibraryActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
-    private LibraryAccessorImpl db;
+    private LibraryAccessorImpl libraryAccessor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_library);
-        db = new LibraryAccessorImpl(this);
-
-        //make recyclerview and fill it
-        recyclerView = findViewById(R.id.recyclerView);
-        layoutManager = new LinearLayoutManager(this);
-        myAdapter = new MyAdapter(db.getCards());
-
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(myAdapter);
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        libraryAccessor = new LibraryAccessorImpl(this);
+
+        //make recyclerview and fill it
         recyclerView = findViewById(R.id.recyclerView);
         layoutManager = new LinearLayoutManager(this);
-        myAdapter = new MyAdapter(db.getCards());
+        myAdapter = new MyAdapter(libraryAccessor.getCards());
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myAdapter);

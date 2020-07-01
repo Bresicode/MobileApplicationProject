@@ -8,11 +8,6 @@ import android.net.wifi.p2p.WifiP2pManager;
  * Interface providing getters for wifi/wifi p2p managers wifi p2p channel and an intentFilter
  */
 public interface NetworkController {
-    /**
-     * gets a wifi manager
-     * @return WifiManager wifiManager
-     */
-    WifiManager getWifiManager();
 
     /**
      * gets a wifi p2p manager
