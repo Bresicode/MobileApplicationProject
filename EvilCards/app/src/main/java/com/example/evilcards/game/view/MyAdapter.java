@@ -1,4 +1,4 @@
-package com.example.evilcards.library.view;
+package com.example.evilcards.game.view;
 
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,9 +1,10 @@
 package com.example.evilcards.game.model;
 
 
-
 import com.example.evilcards.library.model.Card;
+import com.example.evilcards.library.model.CardImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,14 +12,13 @@ public class PlayerImpl implements Player {
 
     private int playerId;
     private String playerName;
-    private List<Card> playerHand;
+    private List<CardImpl> playerHand;
     private Card playerAnswer;
 
-    public PlayerImpl(int playerId, String playerName, List<Card> playerHand, Card playerAnswer, int playerScore) {
+    public PlayerImpl(int playerId, String playerName) {
         this.playerId = playerId;
         this.playerName = playerName;
-        this.playerHand = playerHand;
-        this.playerAnswer = playerAnswer;
+        this.playerHand = new ArrayList<CardImpl>();
     }
 
     @Override
@@ -32,7 +32,7 @@ public class PlayerImpl implements Player {
     }
 
     @Override
-    public List<Card> getPlayerHand() {
+    public List<CardImpl> getPlayerHand() {
         return this.playerHand;
     }
 

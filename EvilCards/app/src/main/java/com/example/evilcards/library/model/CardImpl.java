@@ -19,7 +19,7 @@ public class CardImpl implements Card {
     }
 
     @Override
-    public int getSlideId() {
+    public int getCardId() {
         return this.slideId;
     }
 

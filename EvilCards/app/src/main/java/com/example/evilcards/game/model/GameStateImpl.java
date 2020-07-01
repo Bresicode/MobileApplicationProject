@@ -1,36 +1,37 @@
 package com.example.evilcards.game.model;
 
 
-
 import com.example.evilcards.library.model.Card;
+import com.example.evilcards.library.model.CardImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameStateImpl implements GameState {
-    private List<Player> players;
-    private List<Card> gameDeck;
-    private List<Card> playedCards;
+    private List<PlayerImpl> players;
+    private List<CardImpl> gameDeck;
+    private List<CardImpl> playedCards;
     private Card question;
 
-    public GameStateImpl(List<Player> players, List<Card> gameDeck) {
+    public GameStateImpl(List<PlayerImpl> players, List<CardImpl> gameDeck) {
         this.players = players;
         this.gameDeck = gameDeck;
-        this.playedCards = null;
+        this.playedCards = new ArrayList<CardImpl>();
         this.question = null;
     }
 
     @Override
-    public List<Player> getPlayers() {
+    public List<PlayerImpl> getPlayers() {
         return this.players;
     }
 
     @Override
-    public List<Card> getGameDeck() {
+    public List<CardImpl> getGameDeck() {
         return gameDeck;
     }
 
     @Override
-    public List<Card> getPlayedCards() {
+    public List<CardImpl> getPlayedCards() {
         return this.playedCards;
     }
 

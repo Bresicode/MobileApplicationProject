@@ -5,33 +5,31 @@ import android.util.Log;
 
 import com.example.evilcards.game.view.GameActivity;
 
-public class MyConnectListener implements WifiP2pManager.ActionListener {
+public class MyStopDiscoverPeersListener implements WifiP2pManager.ActionListener {
     GameActivity activity;
-    public MyConnectListener(GameActivity activity) {
+    public MyStopDiscoverPeersListener(GameActivity activity) {
         this.activity = activity;
     }
 
     @Override
     public void onSuccess() {
-        Log.d(activity.TAG, "onSuccess: Connection established");
-        // WiFiDirectBroadcastReceiver notifies us. Ignore for now.
-
+        activity.showMsg("stopPeerDiscovery: onSuccess");
     }
 
     @Override
     public void onFailure(int reason) {
         switch (reason) {
             case WifiP2pManager.ERROR:
-                Log.e("connect", "ERROR");
+                Log.e("stopPeerDiscovery", "ERROR");
                 break;
             case WifiP2pManager.P2P_UNSUPPORTED:
-                Log.e("connect", "P2P_UNSUPPORTED");
+                Log.e("stopPeerDiscovery", "P2P_UNSUPPORTED");
                 break;
             case WifiP2pManager.BUSY:
-                Log.e("connect", "BUSY");
+                Log.e("stopPeerDiscovery", "BUSY");
                 break;
             case WifiP2pManager.NO_SERVICE_REQUESTS:
-                Log.e("connect", "NO_SERVICE_REQUESTS");
+                Log.e("stopPeerDiscovery", "NO_SERVICE_REQUESTS");
                 break;
         }
     }

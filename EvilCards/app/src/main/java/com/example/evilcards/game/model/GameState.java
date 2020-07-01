@@ -2,6 +2,7 @@ package com.example.evilcards.game.model;
 
 
 import com.example.evilcards.library.model.Card;
+import com.example.evilcards.library.model.CardImpl;
 
 import java.util.List;
 
@@ -13,22 +14,23 @@ public interface GameState {
     /**
      * Gets a list of all players in the game
      *
-     * @return List<Player> players
+     * @return List<PlayerImpl> players
      */
-    List<Player> getPlayers();
+    List<PlayerImpl> getPlayers();
 
     /**
      * gets the list of cards that are the game deck
-     * @return List<Card> gameDeck
+     *
+     * @return List<CardImpl> gameDeck
      */
-    List<Card> getGameDeck();
+    List<CardImpl> getGameDeck();
 
     /**
      * Gets a list of all cards that have been selected by the players
      *
-     * @return List<Card> playedCards
+     * @return List<CardImpl> playedCards
      */
-    List<Card> getPlayedCards();
+    List<CardImpl> getPlayedCards();
 
     /**
      * Gets the current question that has to be answered by the players

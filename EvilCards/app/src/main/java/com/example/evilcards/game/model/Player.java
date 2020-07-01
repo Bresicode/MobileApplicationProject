@@ -2,6 +2,7 @@ package com.example.evilcards.game.model;
 
 
 import com.example.evilcards.library.model.Card;
+import com.example.evilcards.library.model.CardImpl;
 
 import java.util.List;
 
@@ -27,9 +28,9 @@ public interface Player {
     /**
      * Gets a list of the cards currently in the player's hand
      *
-     * @return List<Card> playerHand
+     * @return List<CardImpl> playerHand
      */
-    List<Card> getPlayerHand();
+    List<CardImpl> getPlayerHand();
 
     /**
      * Gets the player's selected Card

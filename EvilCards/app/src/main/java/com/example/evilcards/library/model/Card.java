@@ -5,23 +5,23 @@ package com.example.evilcards.library.model;
  */
 public interface Card {
     /**
-     * returns the text of the slide
+     * returns the text of the card
      *
-     * @return String slideText
+     * @return String text
      */
     String getText();
 
     /**
-     * returns the slideId of the slide
+     * returns the cardId of the card
      *
-     * @return slideId int
+     * @return cardId int
      */
-    int getSlideId();
+    int getCardId();
 
     /**
-     * returns a boolean depending on if the slide is a question or not
+     * returns a boolean depending on if the card is a question or not
      *
-     * @return true if slide is a question, false if it no question
+     * @return true if card is a question, false if it is no question
      */
     boolean isQuestion();
 

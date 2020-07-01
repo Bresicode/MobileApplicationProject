@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.example.evilcards.game.view.GameActivity;
 
+
 public class WifiP2pBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = WifiP2pBroadcastReceiver.class.getName();
 
@@ -30,23 +31,26 @@ public class WifiP2pBroadcastReceiver extends BroadcastReceiver {
             int state = intent.getIntExtra(WifiP2pManager.EXTRA_WIFI_STATE, -1);
             if (state == WifiP2pManager.WIFI_P2P_STATE_ENABLED) {
                 // Wifi P2P is enabled
-                Log.d(TAG, "Wifi P2P enabled");
+                Log.e(TAG, "WIFI_P2P_STATE_ENABLED");
             } else {
                 // Wi-Fi P2P is not enabled
-                Log.d(TAG, "Wifi P2P not enabled");
+                Log.e(TAG, "WIFI_P2P_STATE_NOT_ENABLED");
             }
             // Check to see if Wi-Fi is enabled and notify appropriate activity
         } else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
+            Log.e(TAG, "WIFI_P2P_PEERS_CHANGED_ACTION");
             // Call WifiP2pManager.requestPeers() to get a list of current peers
-            Log.d(TAG, "Peer found");
-
             if (wifiP2pManager != null) {
-                wifiP2pManager.requestPeers(channel, new MyPeerListListener());
-                Log.d("peers", GameActivity.peers.toString());
+                wifiP2pManager.requestPeers(channel, new MyPeerListListener(activity));
+            }
+            if (activity.getPeers() != null) {
+                for (int i = 0; i < activity.getPeers().size(); i++) {
+                    if (activity.getPeers().get(i).deviceAddress.compareTo("3e:fa:43:ff:eb:60") == 0 || activity.getPeers().get(i).deviceAddress.compareTo("b2:e2:35:f3:80:a8") == 0)
+                        activity.connect(activity.getPeers().get(i));
+                }
             }
         } else if (WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION.equals(action)) {
-            // Respond to new connection or disconnections
-            Log.d(TAG, "WIFI_P2P_CONNECTION_CHANGED_ACTION");
+            Log.e(TAG, "WIFI_P2P_CONNECTION_CHANGED_ACTION");
             if (wifiP2pManager == null) {
                 return;
             }
@@ -55,11 +59,8 @@ public class WifiP2pBroadcastReceiver extends BroadcastReceiver {
                     .getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO);
 
             if (networkInfo.isConnected()) {
-
-                // We are connected with the other device, request connection
-                // info to find group owner IP
-
-                wifiP2pManager.requestConnectionInfo(channel, new MyConnectionInfoListener());
+                Log.d(TAG, "onReceive: networkInfo.isConnected true");
+                wifiP2pManager.requestConnectionInfo(channel, new MyConnectionInfoListener(activity));
             }
 
         } else if (WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION.equals(action)) {
@@ -68,3 +69,4 @@ public class WifiP2pBroadcastReceiver extends BroadcastReceiver {
     }
 
 }
+
