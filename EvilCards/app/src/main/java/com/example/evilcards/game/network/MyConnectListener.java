@@ -13,26 +13,14 @@ public class MyConnectListener implements WifiP2pManager.ActionListener {
 
     @Override
     public void onSuccess() {
-        Log.d(activity.TAG, "onSuccess: Connection established");
+        activity.showMsg("Connect success!");
+        activity.setStatusText("connection to peers");
         // WiFiDirectBroadcastReceiver notifies us. Ignore for now.
 
     }
 
     @Override
     public void onFailure(int reason) {
-        switch (reason) {
-            case WifiP2pManager.ERROR:
-                Log.e("connect", "ERROR");
-                break;
-            case WifiP2pManager.P2P_UNSUPPORTED:
-                Log.e("connect", "P2P_UNSUPPORTED");
-                break;
-            case WifiP2pManager.BUSY:
-                Log.e("connect", "BUSY");
-                break;
-            case WifiP2pManager.NO_SERVICE_REQUESTS:
-                Log.e("connect", "NO_SERVICE_REQUESTS");
-                break;
-        }
+        activity.showMsg("Connect failed!");
     }
 }

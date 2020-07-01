@@ -5,6 +5,8 @@ import android.net.wifi.p2p.WifiP2pConfig;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,14 +32,19 @@ public class GameActivity extends AppCompatActivity {
     private WifiP2pBroadcastReceiver receiver;
     private NetworkControllerImpl nc;
     private List<WifiP2pDevice> peers;
+    private MyConnectListener connectListener;
+    private MyDiscoverPeersListener discoverPeersListener;
+    private MyStopDiscoverPeersListener stopDiscoverPeersListener;
 
     //game.view
     private RecyclerView recyclerView;
     private RecyclerView.Adapter myAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private TextView statusText;
 
     //samplecards
     private List<CardImpl> sampleCards;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,9 @@ public class GameActivity extends AppCompatActivity {
         //network setup
         nc = new NetworkControllerImpl(this);
         peers = new ArrayList<WifiP2pDevice>();
+        connectListener = new MyConnectListener(this);
+        discoverPeersListener = new MyDiscoverPeersListener(this);
+        stopDiscoverPeersListener = new MyStopDiscoverPeersListener(this);
 
         //initiate sampleCards
         sampleCards = new ArrayList<CardImpl>();
@@ -62,6 +72,7 @@ public class GameActivity extends AppCompatActivity {
         myAdapter = new MyAdapter(sampleCards);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(myAdapter);
+        statusText = findViewById(R.id.statusText);
     }
 
     @Override
@@ -72,41 +83,44 @@ public class GameActivity extends AppCompatActivity {
         startPeerDiscovery();
     }
 
-    /* unregister the broadcast receiver */
     @Override
     protected void onPause() {
         super.onPause();
         unregisterReceiver(receiver);
         stopPeerDiscovery();
-        nc.getWifiP2pManager().cancelConnect(nc.getChannel(), null);
     }
 
     private void startPeerDiscovery() {
-        nc.getWifiP2pManager().discoverPeers(nc.getChannel(), new MyDiscoverPeersListener(this));
+        nc.getWifiP2pManager().discoverPeers(nc.getChannel(), discoverPeersListener);
     }
 
     private void stopPeerDiscovery() {
-        nc.getWifiP2pManager().stopPeerDiscovery(nc.getChannel(), new MyStopDiscoverPeersListener(this));
+        nc.getWifiP2pManager().stopPeerDiscovery(nc.getChannel(), stopDiscoverPeersListener);
     }
 
     public void connect(final WifiP2pDevice device) {
         WifiP2pConfig config = new WifiP2pConfig();
         config.deviceAddress = device.deviceAddress;
         config.wps.setup = WpsInfo.PBC;
-        Log.d("deviceAddress connect", String.valueOf(device.deviceAddress));
-        nc.getWifiP2pManager().connect(nc.getChannel(), config, new MyConnectListener(this));
+        nc.getWifiP2pManager().connect(nc.getChannel(), config, connectListener);
     }
 
     public void showMsg(String message) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-
-    public NetworkControllerImpl getNc() {
-        return nc;
+    public void setStatusText(String text){
+        statusText.setText(text);
     }
-
     public List<WifiP2pDevice> getPeers() {
         return peers;
+    }
+
+    public void connectClients(View view) {
+        for (WifiP2pDevice device : peers) {
+            if (device.deviceName.contains("Player")) {
+                connect(device);
+            }
+        }
     }
 }
 

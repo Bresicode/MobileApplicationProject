@@ -18,7 +18,7 @@ public class LibraryActivityTest {
 
     @Test
     public void RecyclerViewTest() {
-        onView(withId()).;
+
     }
 
     @Test

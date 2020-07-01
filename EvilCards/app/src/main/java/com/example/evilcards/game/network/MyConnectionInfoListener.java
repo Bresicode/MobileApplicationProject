@@ -16,10 +16,10 @@ public class MyConnectionInfoListener implements WifiP2pManager.ConnectionInfoLi
     public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
         String groupOwnerAddress = wifiP2pInfo.groupOwnerAddress.getHostAddress();
         if (wifiP2pInfo.groupFormed && wifiP2pInfo.isGroupOwner) {
-            Log.d(activity.TAG, "onConnectionInfoAvailable: Host action required");
+            activity.setStatusText("Host action required");
 
         } else if (wifiP2pInfo.groupFormed) {
-            Log.d(activity.TAG, "onConnectionInfoAvailable: Client action required");
+            activity.setStatusText("Client action required");
         }
     }
 }
