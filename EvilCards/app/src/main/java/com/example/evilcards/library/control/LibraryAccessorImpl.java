@@ -29,7 +29,7 @@ public class LibraryAccessorImpl implements LibraryAccessor {
 
     public LibraryAccessorImpl(Context context) {
         file = new File(context.getFilesDir(), "data");
-        fm = new LibraryFileManagerImpl();
-        cards = fm.readFromFile(file, context);
+        fm = new LibraryFileManagerImpl(context, file);
+        cards = fm.readFromFile();
     }
 }

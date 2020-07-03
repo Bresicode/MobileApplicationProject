@@ -12,6 +12,7 @@ import org.hamcrest.Matcher;
 import static androidx.test.espresso.core.internal.deps.guava.base.Preconditions.checkNotNull;
 
 public class MyViewMatcher {
+
     public static Matcher<View> atPosition(final int position, @NonNull final Matcher<View> itemMatcher) {
         checkNotNull(itemMatcher);
         return new BoundedMatcher<View, RecyclerView>(RecyclerView.class) {

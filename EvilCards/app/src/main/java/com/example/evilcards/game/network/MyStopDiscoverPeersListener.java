@@ -7,6 +7,7 @@ import com.example.evilcards.game.view.GameActivity;
 
 public class MyStopDiscoverPeersListener implements WifiP2pManager.ActionListener {
     GameActivity activity;
+
     public MyStopDiscoverPeersListener(GameActivity activity) {
         this.activity = activity;
     }

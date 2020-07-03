@@ -5,7 +5,8 @@ import android.net.wifi.p2p.WifiP2pManager;
 import com.example.evilcards.game.view.GameActivity;
 
 public class MyDiscoverPeersListener implements WifiP2pManager.ActionListener {
-        GameActivity activity;
+    GameActivity activity;
+
     public MyDiscoverPeersListener(GameActivity activity) {
         this.activity = activity;
     }

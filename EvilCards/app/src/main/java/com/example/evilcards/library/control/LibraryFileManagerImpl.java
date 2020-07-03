@@ -10,22 +10,27 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryFileManagerImpl implements LibraryFileManager {
+    Context context;
+    File file;
+
+    public LibraryFileManagerImpl(Context context, File file) {
+        this.context = context;
+        this.file = file;
+    }
 
     @Override
-    public void writeToFile(File file, Context context, List<CardImpl> cards) {
-        String filename = "data";
+    public void writeToFile(List<CardImpl> cards) {
         String fileContents = "";
         for (CardImpl card : cards) {
             fileContents += card.toString();
         }
-        try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE)) {
+        try (FileOutputStream fos = this.context.openFileOutput(this.file.getName(), Context.MODE_PRIVATE)) {
             fos.write(fileContents.getBytes());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -35,11 +40,11 @@ public class LibraryFileManagerImpl implements LibraryFileManager {
     }
 
     @Override
-    public List<CardImpl> readFromFile(File file, Context context){
+    public List<CardImpl> readFromFile() {
         List<CardImpl> cards = new ArrayList<CardImpl>();
         FileInputStream fis = null;
         try {
-            fis = context.openFileInput(file.getName());
+            fis = this.context.openFileInput(this.file.getName());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return new ArrayList<CardImpl>();
@@ -49,7 +54,7 @@ public class LibraryFileManagerImpl implements LibraryFileManager {
         try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
             String line = reader.readLine();
             while (line != null) {
-                cards.add( new CardImpl(line, Integer.parseInt(reader.readLine()) ,Boolean.parseBoolean(reader.readLine())));
+                cards.add(new CardImpl(line, Integer.parseInt(reader.readLine()), Boolean.parseBoolean(reader.readLine())));
                 line = reader.readLine();
             }
         } catch (IOException e) {

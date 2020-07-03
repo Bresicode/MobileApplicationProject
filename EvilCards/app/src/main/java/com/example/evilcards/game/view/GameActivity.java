@@ -1,13 +1,9 @@
 package com.example.evilcards.game.view;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.wifi.WifiManager;
 import android.net.wifi.WpsInfo;
 import android.net.wifi.p2p.WifiP2pConfig;
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;

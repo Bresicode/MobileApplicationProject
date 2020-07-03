@@ -7,8 +7,10 @@ import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
 import androidx.test.rule.ActivityTestRule;
 
 import com.example.evilcards.R;
+import com.example.evilcards.game.view.GameActivity;
 import com.example.evilcards.library.view.CardEditActivity;
 import com.example.evilcards.library.view.LibraryActivity;
+import com.example.evilcards.menu.view.MenuActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -24,27 +26,33 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4ClassRunner.class)
-public class LibraryActivityTest {
+public class MenuActivityTest {
 
     @Rule
-    public IntentsTestRule<LibraryActivity> activityTestRule =
-            new IntentsTestRule<LibraryActivity>(LibraryActivity.class);
+    public IntentsTestRule<MenuActivity> activityTestRule =
+            new IntentsTestRule<MenuActivity>(MenuActivity.class);
 
     @Test
-    public void displayAddDeckButton() {
-        onView(withId(R.id.adddeckbutton)).
+    public void displayPlayButton() {
+        onView(withId(R.id.playButton)).
                 check(matches(isDisplayed()));
     }
 
     @Test
-    public void clickAddDeckButton() {
-        onView(withId(R.id.adddeckbutton)).perform(click());
-        intended(hasComponent(new ComponentName(getTargetContext(), CardEditActivity.class)));
+    public void clickPlayButton() {
+        onView(withId(R.id.playButton)).perform(click());
+        intended(hasComponent(new ComponentName(getTargetContext(), GameActivity.class)));
     }
 
     @Test
-    public void displayRecyclerViewTest() {
-        onView(withId(R.id.recyclerView)).check(matches(isDisplayed()));
+    public void displaylibraryButton() {
+        onView(withId(R.id.libraryButton)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void clicklibraryButton() {
+        onView(withId(R.id.libraryButton)).perform(click());
+        intended(hasComponent(new ComponentName(getTargetContext(), LibraryActivity.class)));
     }
 
 }

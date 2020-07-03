@@ -11,18 +11,21 @@ import java.util.List;
 public interface LibraryAccessor {
     /**
      * gets a library file manager
+     *
      * @return LibraryFileManager fm
      */
     LibraryFileManager getFm();
 
     /**
      * gets a file
+     *
      * @return File file
      */
     File getFile();
 
     /**
      * gets a list of cards
+     *
      * @return List<CardImpl> cards
      */
     List<CardImpl> getCards();

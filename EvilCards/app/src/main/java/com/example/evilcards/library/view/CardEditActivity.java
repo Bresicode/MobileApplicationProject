@@ -33,7 +33,7 @@ public class CardEditActivity extends AppCompatActivity {
         String text = editText.getText().toString();
         boolean isQuestion = checkQuestion.isChecked();
         libraryAccessor.getCards().add(new CardImpl(text, libraryAccessor.getCards().size(), isQuestion));
-        libraryAccessor.getFm().writeToFile(libraryAccessor.getFile(), this, libraryAccessor.getCards());
+        libraryAccessor.getFm().writeToFile(libraryAccessor.getCards());
         finish();
     }
 

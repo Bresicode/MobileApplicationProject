@@ -47,16 +47,16 @@ public class WifiP2pBroadcastReceiver extends BroadcastReceiver {
             }
 
             Log.e(TAG, "WIFI_P2P_PEERS_CHANGED_ACTION");
-            } else if (WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION.equals(action)) {
-                if (wifiP2pManager == null) {
-                    return;
-                }
-                NetworkInfo networkInfo = (NetworkInfo) intent
-                        .getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO);
+        } else if (WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION.equals(action)) {
+            if (wifiP2pManager == null) {
+                return;
+            }
+            NetworkInfo networkInfo = (NetworkInfo) intent
+                    .getParcelableExtra(WifiP2pManager.EXTRA_NETWORK_INFO);
 
-                if (networkInfo.isConnected()) {
-                    wifiP2pManager.requestConnectionInfo(channel, connectInfoListener);
-                }
+            if (networkInfo.isConnected()) {
+                wifiP2pManager.requestConnectionInfo(channel, connectInfoListener);
+            }
 
         } else if (WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION.equals(action)) {
         }

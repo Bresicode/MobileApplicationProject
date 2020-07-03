@@ -49,13 +49,8 @@ public class CardEditActivityTest {
 
     @Test
     public void clickConfirmButton(){
-        /*
         onView(withId(R.id.confirmbutton)).perform(click());
         onView(withId(R.id.library_constraintlayout)).check(matches(isDisplayed()));
-
-
-
-         */
     }
 
 }
